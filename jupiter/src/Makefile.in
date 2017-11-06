@@ -1,16 +1,16 @@
-# Makefile.  Generated from Makefile.in by configure.
+# @configure_input@
 
 #package-specific substitution variable
 
-package 	=Jupiter
-version	= 1.0
-tarname = jupiter
+package 	=@PACKAGE_NAME@
+version	= @PACKAGE_VERSION@
+tarname = @PACKAGE_TARNAME@
 distdir = $(tarname)-$(version)
 
 # Prefix-specif substitution var
-prifix = /usr/local
-exec_prefix= ${prefix}
-bindir = ${exec_prefix}/bin
+prifix = @prefix@
+exec_prefix= @exec_prefix@
+bindir = @bindir@
 
 
 all: jupiter

@@ -1,0 +1,16 @@
+vi configure.ac
+autoreconf -v
+ls -lp
+./configure
+mv Makefile Makefile.in 
+ mv src/Makefile src/Makefile.in
+
+
+
+#################  Adding realy functinility #######
+
+// modify Makefile.in and src/Makefile.in 
+
+
+add Prefix-specifc substution var ... and  define package.. version... in
+src/Makefile.in   ====> can launch make in src folder

@@ -1,4 +1,4 @@
-# Makefile.  Generated from Makefile.in by configure.
+# src/Makefile.  Generated from Makefile.in by configure.
 
 #package-specific substitution variable
 
