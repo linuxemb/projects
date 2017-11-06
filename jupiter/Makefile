@@ -1,0 +1,41 @@
+
+# To avoid dist wont cp issue. create a phone target, fot force make to reuild it every time we make the dist target.
+#FORCE:   #exected everytime for it is a phone targe
+
+package = jupiter
+version = 1.0
+tarname =$(package)
+distdir = $(tarname)-$(version)
+
+
+prefix=/usr/local
+export prefix
+
+all clean check install jupiter:
+	cd src && $(MAKE) $@
+.PHONE: all clean
+
+
+dist: $(distdir).tar.gz
+
+$(distdir).tar.gz: $(distdir)
+	tar chof - $(distdir) | gzip -9 -c > $@
+	rm -rf $(distdir)
+$(distdir): FORCE    #FORCE is a dependency to distdir 
+	mkdir -p $(distdir)/src
+	cp Makefile $(distdir)
+	cp src/Makefile $(distdir)/src
+	cp src/main.c $(distdir)/src
+FORCE:
+	-rm $(distdir).tar.gz  > /dev/null 2>&1
+	-rm -rf $(distdir) > /dev/null 2>&1
+
+
+distcheck: $(distdir).tar.gz
+	gzip -cd $(distdir).tar.gz | tar xvf -
+	cd $(distdir) && $(MAKE) all
+	cd $(distdir) && $(MAKE) clean
+	rm -rf $(distdir)
+	@echo "**** $(distdir).tar.gz is ready for distribution."
+
+.PHONE: FORCE  all clean  dist distcheck   
