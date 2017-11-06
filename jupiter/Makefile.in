@@ -21,11 +21,23 @@ dist: $(distdir).tar.gz
 $(distdir).tar.gz: $(distdir)
 	tar chof - $(distdir) | gzip -9 -c > $@
 	rm -rf $(distdir)
+
+# VPATH specific substitution variables
+srcdir 		 = @srcdir@
+VPATH  		 = @srcdir@	
+
 $(distdir): FORCE    #FORCE is a dependency to distdir 
 	mkdir -p $(distdir)/src
-	cp Makefile $(distdir)
-	cp src/Makefile $(distdir)/src
-	cp src/main.c $(distdir)/src
+# VPATH related
+	cp $(srcdir)/configure.ac $(distdir)
+	cp $(srcdir)/configrue $(distdir)
+	cp $(srcdir)/Makefile.in $(distdir)
+	cp $(srcdir)/src/Makefile.in $(distdir)/src
+	cp $(srcdir)/src/main.c $(distdir)/src
+
+#	cp Makefile $(distdir)
+#	cp src/Makefile $(distdir)/src
+#	cp src/main.c $(distdir)/src
 FORCE:
 	-rm $(distdir).tar.gz  > /dev/null 2>&1
 	-rm -rf $(distdir) > /dev/null 2>&1

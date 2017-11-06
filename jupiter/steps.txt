@@ -14,3 +14,6 @@ mv Makefile Makefile.in
 
 add Prefix-specifc substution var ... and  define package.. version... in
 src/Makefile.in   ====> can launch make in src folder
+Adding VPATH 
+mkdir build
+../configure

@@ -1,4 +1,4 @@
-# Makefile.  Generated from Makefile.in by configure.
+# src/Makefile.  Generated from Makefile.in by configure.
 
 #package-specific substitution variable
 
@@ -16,8 +16,13 @@ bindir = ${exec_prefix}/bin
 all: jupiter
 
 
+# VPATH specific substitution variables
+srcdir 		 = .
+
+
 jupiter: main.c
 	gcc -g -O0 -o $@ main.c
+
 
 check: all
 	./jupiter | grep "Hello from .*jupiter"

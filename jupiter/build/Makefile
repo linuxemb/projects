@@ -23,8 +23,8 @@ $(distdir).tar.gz: $(distdir)
 	rm -rf $(distdir)
 
 # VPATH specific substitution variables
-srcdir 		 = .
-
+srcdir 		 = ..
+VPATH  		 = ..	
 
 $(distdir): FORCE    #FORCE is a dependency to distdir 
 	mkdir -p $(distdir)/src
