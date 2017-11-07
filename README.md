@@ -58,3 +58,45 @@ $*---- currrent target name wiht suffix deleted, --- only implicit
 
 ==== GNU extension are not prtable,  ---better only use $@
 .PHONE----- dot rule... or idrective... certain target dont generate filesystem object.
+
+
+==================steps
+mto@ubuntu:~/make/projects/gitjupiter/projects/jupiter$ cat steps.txt 
+vi configure.ac
+autoreconf -v
+ls -lp
+./configure
+mv Makefile Makefile.in 
+ mv src/Makefile src/Makefile.in
+
+
+
+#################  Adding realy functinility #######
+
+// modify Makefile.in and src/Makefile.in 
+
+
+add Prefix-specifc substution var ... and  define package.. version... in
+src/Makefile.in   ====> can launch make in src folder
+Adding VPATH 
+mkdir build
+../configure
+autogen.sh
+autogen.sh
+-------generated config.h.in and install-sh 2 files
+
+autogen.sh
+
+--------
+
+#!/bin/sh
+autoreconf --install
+automake --add-missing --copy >/dev/null 2>&1
+
+
+autoconf
+./configure
+./config.status config.h
+./config.status --help 
+./configure.status --file=extra:extra.in
+
