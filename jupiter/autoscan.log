@@ -1,0 +1,14 @@
+autoscan: warning: missing AC_CHECK_HEADERS([stdlib.h]) wanted by: 
+	src/main.c:1
+autoscan: warning: missing AC_PREREQ wanted by: 
+	autoscan
+autoscan: warning: missing AC_PROG_CC wanted by: 
+	src/main.c
+	src/Makefile.in:24
+	src/src/Makefile:20
+autoscan: warning: missing AC_PROG_INSTALL wanted by: 
+	Makefile.in:28
+	src/Makefile.in:33
+	src/Makefile.in:34
+	src/src/Makefile:28
+	src/src/Makefile:29

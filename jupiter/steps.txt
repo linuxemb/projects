@@ -17,3 +17,21 @@ src/Makefile.in   ====> can launch make in src folder
 Adding VPATH 
 mkdir build
 ../configure
+autogen.sh
+autogen.sh
+-------generated config.h.in and install-sh 2 files
+
+autogen.sh
+
+--------
+
+#!/bin/sh
+autoreconf --install
+automake --add-missing --copy >/dev/null 2>&1
+
+
+autoconf
+./configure
+./config.status config.h
+./config.status --help 
+./configure.status --file=extra:extra.in
